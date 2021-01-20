@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<h2>Welcome to HyperJob!</h2>
+
+<div><a href="{% url 'login' %}">Login page</a></div>
+<div><a href="{% url 'signup' %}">Sign up page</a></div>
+<div><a href="{% url 'vacancies' %}">Vacancy list</a></div>
+<div><a href="{% url 'resumes' %}">Resume list</a></div>
+<div><a href="{% url 'home' %}">Personal profile</a></div>
+
+<form method="post" enctype="multipart/form-data" action="{% url 'home' %}">
+    {% csrf_token %}
+    <div>{{ form.as_table }}</div>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
